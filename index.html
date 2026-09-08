@@ -132,6 +132,8 @@ header.scrolled .brand-mark{width:38px;height:38px;font-size:.8rem}
 .nav-links a:hover,.nav-links a.active{color:#fff}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
 .nav-cta{display:none}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{color:#fff!important}
 @media(min-width:960px){.nav-cta{display:inline-flex;padding:6px 14px}}
 .burger{
   display:none;flex-direction:column;gap:6px;
@@ -509,7 +511,7 @@ footer a:hover{color:var(--gold-light)}
       <a href="#" onclick="return false">Listings</a>
       <a href="#" onclick="return false">Let's Move</a>
       <a href="#" onclick="return false">About Us</a>
-      <a href="#contact" class="btn btn-gold nav-cta">Call Now</a>
+      <a href="#" onclick="return false" class="btn btn-gold nav-cta">Call Now</a>
     </nav>
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
