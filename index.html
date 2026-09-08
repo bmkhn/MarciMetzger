@@ -124,6 +124,7 @@ header.scrolled .brand-mark{width:38px;height:38px;font-size:.8rem}
   letter-spacing:.2em;text-transform:uppercase;
   position:relative;padding:6px 0;transition:color .3s;
 }
+.nav-links a.btn-gold{padding:6px 14px}
 .nav-links a::after{
   content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
   background:var(--gold-light);transition:width .35s var(--ease);
@@ -131,7 +132,7 @@ header.scrolled .brand-mark{width:38px;height:38px;font-size:.8rem}
 .nav-links a:hover,.nav-links a.active{color:#fff}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
 .nav-cta{display:none}
-@media(min-width:960px){.nav-cta{display:inline-flex;padding:.75rem 1.6rem}}
+@media(min-width:960px){.nav-cta{display:inline-flex;padding:6px 14px}}
 .burger{
   display:none;flex-direction:column;gap:6px;
   background:none;border:0;cursor:pointer;padding:8px;z-index:120;
@@ -326,11 +327,14 @@ header.scrolled .brand-mark{width:38px;height:38px;font-size:.8rem}
 }
 .field select{cursor:pointer;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d4b98c' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;
+  background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px;
+  padding-right:2.2rem;
 }
 .field select option{color:#1a1a18;background:#fff}
 .field input:focus,.field select:focus{
   outline:none;border-color:var(--gold);background:rgba(255,255,255,.1);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23d4b98c' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px;
 }
 .field input::placeholder{color:rgba(255,255,255,.4)}
 .search-actions{
@@ -502,9 +506,9 @@ footer a:hover{color:var(--gold-light)}
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="#home" class="active">Home</a>
-      <a href="#listings">Listings</a>
-      <a href="#move">Let's Move</a>
-      <a href="#about">About Us</a>
+      <a href="#" onclick="return false">Listings</a>
+      <a href="#" onclick="return false">Let's Move</a>
+      <a href="#" onclick="return false">About Us</a>
       <a href="#contact" class="btn btn-gold nav-cta">Call Now</a>
     </nav>
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -515,16 +519,21 @@ footer a:hover{color:var(--gold-light)}
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
-  <div class="container hero-inner">
-    <p class="eyebrow">Marci Metzger — The Ridge Realty Group</p>
-    <h1>Marci Metzger</h1>
-    <p class="tagline">Realtor for nearly 3 decades &nbsp;·&nbsp; Pahrump, Nevada</p>
-    <p class="sub">Over two decades in real estate. Licensed Broker in Seattle, now serving
-      Southern Nevada as Pahrump's top real estate agent — helping buyers and sellers
-      move with confidence.</p>
-    <div class="hero-actions">
-      <a href="tel:+12069196886" class="btn btn-gold">Call Now</a>
-      <a href="#contact" class="btn btn-ghost">Get It Sold</a>
+  <div class="container hero-inner" style="display:flex;align-items:center;gap:3rem;justify-content:center;max-width:900px;margin-inline:auto">
+    <div style="flex:1;min-width:0">
+      <p class="eyebrow">Marci Metzger — The Ridge Realty Group</p>
+      <h1>Marci Metzger</h1>
+      <p class="tagline">Realtor for nearly 3 decades &nbsp;·&nbsp; Pahrump, Nevada</p>
+      <p class="sub">Over two decades in real estate. Licensed Broker in Seattle, now serving
+        Southern Nevada as Pahrump's top real estate agent — helping buyers and sellers
+        move with confidence.</p>
+      <div class="hero-actions" style="padding-left:2px">
+        <a href="tel:+12069196886" class="btn btn-gold">Call Now</a>
+        <a href="#contact" class="btn btn-ghost">Get It Sold</a>
+      </div>
+    </div>
+    <div style="flex:none;width:220px">
+      <img src="Marci.webp" alt="Marci Metzger — Headshot" style="width:220px;height:220px;object-fit:cover;border-radius:50%;border:3px solid var(--gold-light);box-shadow:0 8px 40px rgba(0,0,0,.5)">
     </div>
   </div>
   <div class="hero-phone">
@@ -540,7 +549,7 @@ footer a:hover{color:var(--gold-light)}
     <div class="section-head center" style="margin-bottom:2.6rem">
       <p class="eyebrow center">Top Residential Sales — Last 5 Years</p>
       <h2 class="section-title" style="color:#fff">A Track Record You Can <em>Measure</em></h2>
-      <p class="lede" style="color:rgba(255,255,255,.66)">We helped nearly 90 clients in 2021, and closed 28.5 million in sales!
+      <p class="lede" style="color:rgba(255,255,255,.66);text-align:center;margin-inline:auto">We helped nearly 90 clients in 2021, and closed 28.5 million in sales!
         Our team works hard every day to grow and learn, so that we may continue to excel in our market.
         Our clients deserve our best, &amp; we want to make sure our best is better every year.</p>
     </div>
@@ -553,42 +562,7 @@ footer a:hover{color:var(--gold-light)}
   </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
-<section class="section" id="about">
-  <div class="container about-grid">
-    <div class="about-media reveal">
-      <span class="frame" aria-hidden="true"></span>
-      <img src="https://img1.wsimg.com/isteam/ip/067a4d42-19e8-46d9-9bed-578bf62dd44e/5570%20Ailanto-45.jpg-SMALL.JPG/:/rs=w:900,h:1050,cg:true,m/cr=w:900,h:1050"
-           alt="Desert home listed by Marci Metzger Homes in Pahrump, Nevada" loading="lazy">
-      <div class="about-badge">
-        <strong>28.5M</strong>
-        <span>Closed 2021 Sales</span>
-      </div>
-    </div>
-    <div class="about-copy">
-      <p class="eyebrow">About Us</p>
-      <h2 class="section-title">Meet Marci — <em>Pahrump's</em> Top Realtor</h2>
-      <p class="lede">Nervous about your property adventure? Don't be. Whether you're getting ready to buy or sell
-        your residence, looking at investment properties, or just curious about the markets, our team ensures
-        you get the best experience possible!</p>
-      <ul class="about-points">
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b08d57" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Licensed Broker — Seattle roots, serving Southern Nevada
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b08d57" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Commercial &amp; residential — large or small, condo or mansion
-        </li>
-        <li>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b08d57" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          We live, work, and play in this community
-        </li>
-      </ul>
-      <a href="#contact" class="btn btn-dark">Let's Talk</a>
-    </div>
-  </div>
-</section>
+
 
 <!-- ================= SERVICES ================= -->
 <section class="section services" id="services">
@@ -633,8 +607,7 @@ footer a:hover{color:var(--gold-light)}
             the right people to get the answers you need in a timely fashion. We make sure you feel confident
             and educated every step of the way.</p>
         </div>
-      </article>
-    </div>
+      </article>    </div>
   </div>
 </section>
 
@@ -677,7 +650,7 @@ footer a:hover{color:var(--gold-light)}
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b08d57" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Contractors on speed dial</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b08d57" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Confident, educated decisions every step of the way</li>
         </ul>
-        <a href="#listings" class="btn btn-outline">Start Searching</a>
+        <a href="#contact" class="btn btn-outline">Start Searching</a>
       </div>
     </div>
   </div>
@@ -726,29 +699,31 @@ footer a:hover{color:var(--gold-light)}
             <option>Bathrooms (Low to High)</option><option>Bathrooms (High to Low)</option>
           </select>
         </div>
-        <div class="field">
+
+        <div class="field" style="grid-column:1">
           <label for="f-beds">Bedrooms</label>
           <select id="f-beds" name="beds">
             <option>Any Number</option><option>Studio</option>
             <option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option><option>6+</option>
           </select>
         </div>
-        <div class="field">
+        <div class="field" style="grid-column:2">
           <label for="f-baths">Baths</label>
           <select id="f-baths" name="baths">
             <option>Any Number</option>
             <option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option><option>6+</option>
           </select>
         </div>
-        <div class="field">
+
+        <div class="field" style="grid-column:1">
           <label for="f-min">Min Price</label>
           <input type="text" id="f-min" name="minPrice" inputmode="numeric" placeholder="$ Any">
         </div>
-        <div class="field">
+        <div class="field" style="grid-column:2">
           <label for="f-max">Max Price</label>
           <input type="text" id="f-max" name="maxPrice" inputmode="numeric" placeholder="$ Any">
         </div>
-        <div class="search-actions">
+        <div class="search-actions" style="grid-column:1/-1">
           <button type="button" class="btn btn-gold">Search Now</button>
         </div>
       </div>
@@ -788,6 +763,15 @@ footer a:hover{color:var(--gold-light)}
     </div>
   </div>
 </section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">›</button>
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
 
 <!-- ================= CONTACT ================= -->
 <section class="section contact" id="contact">
@@ -890,9 +874,9 @@ footer a:hover{color:var(--gold-light)}
         <h4>Explore</h4>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#listings">Listings</a></li>
-          <li><a href="#move">Let's Move</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#" onclick="return false">Listings</a></li>
+          <li><a href="#" onclick="return false">Let's Move</a></li>
+          <li><a href="#" onclick="return false">About Us</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -911,14 +895,7 @@ footer a:hover{color:var(--gold-light)}
   </div>
 </footer>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
-  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
-  <img id="lbImg" src="" alt="">
-  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">›</button>
-  <p class="lb-caption" id="lbCaption"></p>
-</div>
+
 
 <button class="to-top" id="toTop" aria-label="Back to top">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
@@ -958,15 +935,9 @@ footer a:hover{color:var(--gold-light)}
   }));
 
   /* ---------- Active nav link ---------- */
-  const sections = ['home','listings','move','about','contact']
-    .map(id => document.getElementById(id)).filter(Boolean);
+  const homeSection = document.getElementById('home');
   function highlightNav(){
-    const y = getScrollY() + 120;
-    let current = 'home';
-    sections.forEach(s => { if (s.offsetTop <= y) current = s.id; });
-    navLinks.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
+    /* Only Home is tracked; other pages don't exist yet */
   }
 
   /* ---------- Reveal on scroll ---------- */
@@ -1041,10 +1012,7 @@ footer a:hover{color:var(--gold-light)}
   /* ---------- Back to top ---------- */
   toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
-  /* ---------- Close lightbox when navigating away ---------- */
-  document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
-    a.addEventListener('click', closeLb);
-  });
+
 
   onScroll();
 })();
